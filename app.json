@@ -1,0 +1,13 @@
+{
+  "image": "heroku/python",
+  "env": {
+    "CAMUNDA_REST_URL": {
+      "description": "Camunda REST API URL",
+      "value": "https://digibp.herokuapp.com/rest"
+    },
+    "CAMUNDA_TENANT_ID": {
+      "description": "Camunda Tenant ID",
+      "value": "showcase"
+    }
+  }
+}
