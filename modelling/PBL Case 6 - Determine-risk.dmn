@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" id="Definitions_19svk78" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.7.3">
+  <decision id="Decision_DetermineRisk" name="Determine risk">
+    <decisionTable id="decisionTable_1">
+      <input id="input_1" label="age">
+        <inputExpression id="inputExpression_1" typeRef="long">
+          <text>age</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0r28mgi" label="kw">
+        <inputExpression id="LiteralExpression_0o58ths" typeRef="long">
+          <text>kw</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_07xro6d" label="license revocation">
+        <inputExpression id="LiteralExpression_1kwwsde" typeRef="boolean">
+          <text>licenseRevocation</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="risk" name="risk" typeRef="string">
+        <outputValues id="UnaryTests_1srevnl">
+          <text>"high","medium","low","unknown"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_026zlrs">
+        <inputEntry id="UnaryTests_0enm56i">
+          <text>&lt;= 21</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04afeho">
+          <text>&gt;= 150</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0d6lxod">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1cqp4vo">
+          <text>"high"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_13kckuj">
+        <inputEntry id="UnaryTests_1n1ypyt">
+          <text>&lt;= 21</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tlmoub">
+          <text>&lt; 150</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gbx8hr">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ih6v56">
+          <text>"high"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ktzpg3">
+        <inputEntry id="UnaryTests_0mznugl">
+          <text>&lt;= 21</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x228g6">
+          <text>&lt; 150</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_096dps6">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01vx79c">
+          <text>"medium"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1u9h7ss">
+        <inputEntry id="UnaryTests_01jgjg1">
+          <text>[22..30]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09z0qeh">
+          <text>&gt;= 200</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06c3xdr">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1a9fptg">
+          <text>"high"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0jawvw0">
+        <inputEntry id="UnaryTests_0dpfk93">
+          <text>[22..30]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ne8xnn">
+          <text>&lt; 200</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qx4fsy">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04v6ono">
+          <text>"unknown"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0txo629">
+        <inputEntry id="UnaryTests_0242fta">
+          <text>[22..30]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f535de">
+          <text>&gt;= 150</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05y24pb">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rptf4t">
+          <text>"medium"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0b5y603">
+        <inputEntry id="UnaryTests_1dr8fad">
+          <text>[22..30]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_175tcdu">
+          <text>&lt; 150</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wvol1j">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_139tjmx">
+          <text>"low"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1mdp8fc">
+        <inputEntry id="UnaryTests_0ssoiwk">
+          <text>&gt; 30</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fx1gh8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_025jluk">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vclwzq">
+          <text>"unknown"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1paeu5r">
+        <inputEntry id="UnaryTests_13dxb9s">
+          <text>&gt; 30</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10yg59m">
+          <text>&gt;= 200</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15bnim1">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07g5jnv">
+          <text>"medium"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0th2g30">
+        <inputEntry id="UnaryTests_1k9du5q">
+          <text>&gt; 30</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0i43iht">
+          <text>&lt; 200</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nj8dzd">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1i7jidy">
+          <text>"low"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

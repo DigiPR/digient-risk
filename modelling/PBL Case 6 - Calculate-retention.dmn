@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" id="Definitions_19svk78" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.7.3">
+  <decision id="Decision_CalculateRetention" name="Calculate retention">
+    <decisionTable id="decisionTable_1" hitPolicy="COLLECT" aggregation="SUM">
+      <input id="input_1" label="age">
+        <inputExpression id="inputExpression_1" typeRef="long">
+          <text>age</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0r28mgi" label="car price">
+        <inputExpression id="LiteralExpression_0o58ths" typeRef="long">
+          <text>carPrice</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="retention" name="retention" typeRef="long" />
+      <rule id="DecisionRule_0ktzpg3">
+        <inputEntry id="UnaryTests_0mznugl">
+          <text>&lt;= 21</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x228g6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01vx79c">
+          <text>1500</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0txo629">
+        <inputEntry id="UnaryTests_0242fta">
+          <text>[22..30]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f535de">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rptf4t">
+          <text>1000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1paeu5r">
+        <inputEntry id="UnaryTests_13dxb9s">
+          <text>&gt; 30</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10yg59m">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07g5jnv">
+          <text>500</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xubdb3">
+        <inputEntry id="UnaryTests_1edvdgi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e10zua">
+          <text>&gt;=90000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10tkfg2">
+          <text>5000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1nx5eh9">
+        <inputEntry id="UnaryTests_0m9383v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17zkcc1">
+          <text>[60000..90000[</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1i2law9">
+          <text>2000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0uttckw">
+        <inputEntry id="UnaryTests_19c7kbp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16u22pn">
+          <text>[30000..60000[</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ks98q0">
+          <text>1000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1coys6x">
+        <inputEntry id="UnaryTests_10rn5re">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_120tty8">
+          <text>&lt;30000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0yle8pb">
+          <text>500</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
