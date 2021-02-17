@@ -6,7 +6,7 @@ import json
 
 class RiskClient:
     def __init__(self):
-        self.camunda_rest_url = os.environ.get("CAMUNDA_REST_URL", "https://digibp.herokuapp.com/rest")
+        self.camunda_rest_url = os.environ.get("CAMUNDA_REST_URL", "https://digibp.herokuapp.com/engine-rest")
         self.camunda_tenant_id = os.environ.get("CAMUNDA_TENANT_ID", "showcase")
         self.worker = cam.Client(self.camunda_rest_url)
         self.worker.subscribe("DetermineRisks", self.determine_risks_callback, self.camunda_tenant_id)
