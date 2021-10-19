@@ -14,7 +14,7 @@ class RiskClient:
         self.worker.subscribe("CalculateRetention", self.calculate_retention_callback, self.camunda_tenant_id)
         self.worker.polling()
 
-    def determine_risks_callback(self, body):
+    def determine_risks_callback(self, taskid, body):
         age = body[0]['variables']['age']['value']
         kw = body[0]['variables']['kw']['value']
         license_revocation = body[0]['variables']['licenseRevocation']['value']
@@ -33,9 +33,9 @@ class RiskClient:
         risk = response_body[0]['risk']['value']
 
         variables = {"risk": risk}
-        self.worker.complete(body, **variables)
+        self.worker.complete(taskid, **variables)
 
-    def calculate_retention_callback(self, body):
+    def calculate_retention_callback(self, taskid, body):
         age = body[0]['variables']['age']['value']
         car_price = body[0]['variables']['carPrice']['value']
 
@@ -52,7 +52,7 @@ class RiskClient:
         retention = response_body[0]['retention']['value']
 
         variables = {"retention": retention}
-        self.worker.complete(body, **variables)
+        self.worker.complete(taskid, **variables)
 
 
 if __name__ == '__main__':
