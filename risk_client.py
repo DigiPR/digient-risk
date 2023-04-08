@@ -2,7 +2,7 @@ import os
 import requests
 import json
 import httpimport
-with httpimport.github_repo('DigiBP', 'digibp-camunda-external-python-task', 'cam'): import cam
+with httpimport.github_repo('DigiBP', 'digibp-camunda-external-python-task'): import cam
 
 
 class RiskClient:
