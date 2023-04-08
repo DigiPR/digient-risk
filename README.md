@@ -4,7 +4,7 @@
 - [Determine Risk Decision Model | DMN File Download](https://cdn.jsdelivr.net/gh/DigiPR/digient-risk@master/modelling/PBL%20Case%206%20-%20Determine-risk.dmn)
 - [Calculate Retention Decision Model | DMN File Download](https://cdn.jsdelivr.net/gh/DigiPR/digient-risk@master/modelling/PBL%20Case%206%20-%20Calculate-retention.dmn)
 
-## 1. Deploy Microservice to Render
+## 2. Deploy Microservice to Render
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/DigiPR/digient-risk)
 
 ## or deploy Microservice to Heroku
